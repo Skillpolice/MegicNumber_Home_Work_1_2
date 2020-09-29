@@ -15,33 +15,33 @@ public class ClickNumbers : MonoBehaviour
 
     void Start()
     {
-        title.text = "Нажмите клавижу от 1 до 9";
+        
     }
 
 
     void Update()
     {
-        if(sum <50)
+        if (sum < allSum)
         {
             if (Input.GetKeyDown(KeyCode.Keypad1))
             {
                 sum += 1;
-                ct += 1;
+                ct++;
             }
             if (Input.GetKeyDown(KeyCode.Keypad2))
             {
                 sum += 2;
-                ct += 1;
+                ct++;
             }
             if (Input.GetKeyDown(KeyCode.Keypad3))
             {
                 sum += 3;
-                ct += 1;
+                ct++;
             }
             if (Input.GetKeyDown(KeyCode.Keypad4))
             {
                 sum += 4;
-                ct += 1;
+                ct++;
             }
             if (Input.GetKeyDown(KeyCode.Keypad5))
             {
@@ -51,31 +51,27 @@ public class ClickNumbers : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Keypad6))
             {
                 sum += 6;
-                ct += 1;
+                ct++;
             }
             if (Input.GetKeyDown(KeyCode.Keypad7))
             {
                 sum += 7;
-                ct += 1;
+                ct++;
             }
-
-
             if (Input.GetKeyDown(KeyCode.Keypad8))
             {
                 sum += 8;
                 ct++;
             }
-
             if (Input.GetKeyDown(KeyCode.Keypad9))
             {
                 sum += 9;
-                ct += 1;
-            }    
+                ct++;
+            }
         }
-        else
-        {
-            GetSum();
-        }
+
+        GetSum();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ct = 0;
@@ -89,11 +85,10 @@ public class ClickNumbers : MonoBehaviour
 
     public void GetSum()
     {
-
-        title.text = "Summa = " + sum.ToString() + "\n" + " Кол-во проходов в нoги)) " + ct;
+        title.text = "Нажимайте клавиши от 1 до 9" + "\n" +  "Summa = " + sum.ToString() + "\n" + " Кол-во проходов в нoги)) " + ct;
         if (sum >= allSum)
         {
-            title.text = "Game Over" + "\n" +  "Summa =" + sum + "\n" + " Кол-во проходов в нoги)) " + ct;
+            title.text = "Game Over" + "\n" + "Summa =" + sum + "\n" + " Кол-во проходов в нoги)) " + ct;
         }
 
     }
