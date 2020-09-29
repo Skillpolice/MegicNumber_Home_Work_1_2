@@ -9,8 +9,7 @@ public class ClickNumbers : MonoBehaviour
     public Text title;
 
     int sum;
-    int allSum = 50;
-    bool stopNum = false;
+    public int allSum = 50;
     int ct;
 
     void Start()
@@ -85,6 +84,7 @@ public class ClickNumbers : MonoBehaviour
 
     public void GetSum()
     {
+      
         title.text = "Нажимайте клавиши от 1 до 9" + "\n" +  "Summa = " + sum.ToString() + "\n" + " Кол-во проходов в нoги)) " + ct;
         if (sum >= allSum)
         {
