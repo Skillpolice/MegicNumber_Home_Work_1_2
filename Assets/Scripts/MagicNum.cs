@@ -16,6 +16,9 @@ public class MagicNum : MonoBehaviour
 
     void Start()
     {
+        ct = 0;
+        min = 1;
+        max = 1000;
         print("Закадайте число от 1 до " + max);
         UpdateGuess();
     }
@@ -39,11 +42,9 @@ public class MagicNum : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            ct = 0;
-            min = 1;
-            max = 1000;
+
             Start();
-            print("----------------NEW GAME-------------------");
+            title.text = "----------------NEW GAME-------------------";
         }
 
     }
@@ -51,7 +52,7 @@ public class MagicNum : MonoBehaviour
 
     void UpdateGuess()
     {
-        ct += 1;
+        ct++;
         guess = (min + max) / 2;
         title.text = "ваше число " + guess.ToString() + " ?";
 
