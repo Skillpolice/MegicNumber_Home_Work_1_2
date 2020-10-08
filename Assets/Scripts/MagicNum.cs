@@ -10,12 +10,14 @@ public class MagicNum : MonoBehaviour
 
     public int min;
     public int max;
-    int guess;
+    public int guess;
 
     int ct = 0;
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
+
         ct = 0;
         min = 1;
         max = 1000;
@@ -27,14 +29,15 @@ public class MagicNum : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow)) //нажатие клавишы вверх и вычитание среднеарефметичесткого
         {
-            min = guess;
-            UpdateGuess();
+
+            Scens1();
+            
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow)) //нажатие клавишы вниз и вычитание среднеарефметичесткого
         {
-
-            max = guess;
-            UpdateGuess();
+            
+            Scens2();
+           
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -49,6 +52,18 @@ public class MagicNum : MonoBehaviour
 
     }
 
+    public void Scens1()
+    {
+        min = guess;
+        UpdateGuess();
+       
+    }
+    public void Scens2()
+    {
+        max = guess;
+        UpdateGuess();
+        
+    }
 
     void UpdateGuess()
     {
